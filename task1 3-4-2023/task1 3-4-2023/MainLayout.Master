@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainLayout.master.cs" Inherits="task1_3_4_2023.MainLayout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+  <div class="header-container">
+      
+    <h1 id="header" runat="server"></h1>
+    <div style="height: 74px;" class="user-info" id="userInfo" runat="server">
+        <p style="color:white;" id="headerText" runat="server"></p>
+    <asp:Button ID="logOut" runat="server" Text="Log Out" OnClick="logOut_Click" ForeColor="Black" />
+    </div>
+      
+  </div>
+
+  <div class="aside-container">
+    <nav>
+      <ul>
+        <li><a href="users.aspx">Users</a></li>
+        <li id="login" runat="server"><a href="login.aspx">Sign in</a></li>
+        <li id="register" runat="server"><a href="register.aspx">Sign up</a></li>
+    
+      </ul>
+    </nav>
+  </div>
+
+  <div class="main-container">
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+  </div>
+
+  <div class="footer-content">
+    <p>Task name: task1</p>
+    <p>Task start date: 4/3/2023</p>
+  </div>
+
+    </form>
+     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
