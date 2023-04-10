@@ -125,6 +125,25 @@
   
 
     <%-- ------------------------------------------------------------------------------ --%>
+    <%-- 
+      AutoGenerateColumns: automatically generate columns based on the data source's fields
+      DataKeyNames: specify the primary key field used for operations operations like editing, updating, or deleting rows.
+      OnRowEditing:when a user clicks the Edit button (and in event method we switch the item template with edit template and rebind the gridvew 
+      OnRowUpdating: when a user clicks the Update button
+      OnRowDataBound: triggered for each row in the GridView when it is bound to the data source
+      OnPageIndexChanging: triggered when a user clicks a different page number
+
+
+      BoundField: used for simple data display
+      TemplateField: for more complex data display and customization
+      CommandField: for handling row actions in a GridView control (and her is used templateField rather than it to add aleart to delete button(more customizable)
+
+      Eval and Bind: data binding expressions
+      Eval: used for one-way changes made to the data in the control are not automatically sent back to the data source.
+            can also apply formatting to the data (since it's read only), Eval("FieldName", "{0:dd-MM-yyyy}")
+      Bind: two-way, changes on data automatically send to data source
+            can use other controls or formatting methods in combination with Bind 
+    --%>
     <asp:GridView ID="GridView1" CssClass="table table-striped table-bordered table-responsive" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowDataBound="GridView1_RowDataBound" OnSorting="GridView1_Sorting" AllowSorting="true" AllowPaging="True" PageSize="2" OnPageIndexChanging="GridView1_PageIndexChanging">
         <PagerSettings Position="Bottom" Mode="NumericFirstLast" />
         <Columns>

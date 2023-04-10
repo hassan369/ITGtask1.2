@@ -25,7 +25,7 @@ namespace task1_3_4_2023
         }
 
        
-
+        //for the first gridview (the sone with sqldatasource)
         protected void btnFilter_Click(object sender, EventArgs e)
         {
             // Update the parameters of the SqlDataSource with the new values in the textbox
@@ -40,7 +40,7 @@ namespace task1_3_4_2023
 
 
         }
-
+        //for the first gridview
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
             if (string.IsNullOrEmpty(txtNameFilter.Text))
@@ -71,23 +71,36 @@ namespace task1_3_4_2023
         }
 
 
-        
+
+
+        /*
+            object sender: object that raised the event (in this case GridView)
+            e, an instance of GridViewEditEventArgs: containing event data.
+
+            EditIndex: determine the index of the row currently in edit mode.
+            e.NewEditIndex:  index of the row being edited.
+
+            BindGridView():  refreshing the GridView, which will now display the specified row in edit mode
+         */
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView1.EditIndex = e.NewEditIndex;
             BindGridView();
+            
 
         }
 
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            // he didn't just call ddlGender, because there is more than one, one in each row
             DropDownList ddlGender = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("ddlGender");
             DropDownList ddlUserType = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("ddlUserType");
             DropDownList ddlLanguage = (DropDownList)GridView1.Rows[e.RowIndex].FindControl("ddlLanguage");
 
             ShowUsers user = new ShowUsers
             {
+                //with boundField we use rows.cells.controls, but with templateField we use findControl
                 ID = GridView1.DataKeys[e.RowIndex].Value.ToString(),
                 Name = ((TextBox)GridView1.Rows[e.RowIndex].Cells[1].Controls[0]).Text,
                 UserName = ((Label)GridView1.Rows[e.RowIndex].FindControl("lblUserName")).Text,
@@ -98,7 +111,7 @@ namespace task1_3_4_2023
             };
 
             UpdateUser(user);
-
+            // seting the editIndex to -1, where -1 will never match any row cuase it's 0 index , so no row will be in edit mode  
             GridView1.EditIndex = -1;
             BindGridView();
         }
