@@ -145,7 +145,7 @@ namespace task1_3_4_2023
     if (e.Row.RowType == DataControlRowType.DataRow && (e.Row.RowState & DataControlRowState.Edit) > 0)
     {
                 
-                ShowUsers user = (ShowUsers)e.Row.DataItem;
+        ShowUsers user = (ShowUsers)e.Row.DataItem;
 
 
                 
@@ -155,10 +155,10 @@ namespace task1_3_4_2023
 
 
 
-                HtmlInputGenericControl inputDateOfBirth = (HtmlInputGenericControl)e.Row.FindControl("inputDateOfBirth");
-                inputDateOfBirth.Value = user.DateOfBirthDate.ToString("yyyy-MM-dd");
-                // Populate Gender DropDownList
-                ddlGender.Items.Add(new ListItem("Male", "1"));
+        HtmlInputGenericControl inputDateOfBirth = (HtmlInputGenericControl)e.Row.FindControl("inputDateOfBirth");
+        inputDateOfBirth.Value = user.DateOfBirthDate.ToString("yyyy-MM-dd");
+        // Populate Gender DropDownList
+        ddlGender.Items.Add(new ListItem("Male", "1"));
         ddlGender.Items.Add(new ListItem("Female", "2"));
 
         // Populate UserType DropDownList

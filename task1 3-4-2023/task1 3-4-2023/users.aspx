@@ -11,23 +11,23 @@
 
 
     <div class="form-row">
-    <div class="form-group col-md-4">
-        <span class="form-check-label" for="txtNameFilter">UserName</span>
-        <asp:TextBox CssClass="form-control" ID="txtNameFilter" runat="server"></asp:TextBox>
+        <div class="form-group col-md-4">
+            <span class="form-check-label" for="txtNameFilter">UserName</span>
+            <asp:TextBox CssClass="form-control" ID="txtNameFilter" runat="server"></asp:TextBox>
+        </div>
+        <div class="form-group col-md-4">
+            <span class="form-check-label" for="ddlGender">Gender</span>
+            <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
+                <asp:ListItem Text="Both" Value=""></asp:ListItem>
+                <asp:ListItem Text="Male" Value="1"></asp:ListItem>
+                <asp:ListItem Text="Female" Value="2"></asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <div class="form-group col-md-4">
+            <label>&nbsp;</label>
+            <asp:Button ID="btnFilter" runat="server" OnClick="btnFilter_Click" Text="filter" CssClass="btn btn-primary form-control" Style="margin-top: 23px;" />
+        </div>
     </div>
-    <div class="form-group col-md-4">
-        <span class="form-check-label" for="ddlGender">Gender</span>
-        <asp:DropDownList ID="ddlGender" runat="server" CssClass="form-control">
-            <asp:ListItem Text="Both" Value=""></asp:ListItem>
-            <asp:ListItem Text="Male" Value="1"></asp:ListItem>
-            <asp:ListItem Text="Female" Value="2"></asp:ListItem>
-        </asp:DropDownList>
-    </div>
-    <div class="form-group col-md-4">
-        <label>&nbsp;</label>
-<asp:Button ID="btnFilter" runat="server" OnClick="btnFilter_Click" Text="filter" CssClass="btn btn-primary form-control" style="margin-top: 23px;" />
-    </div>
-</div>
 
 
 
